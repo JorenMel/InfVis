@@ -1,0 +1,1095 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Data Cleaning &#8212; Jupyter Book Template</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Code/environmental-impact-of-food-production-eda';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../docs/visualisaties.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Jupyter Book Template</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../docs/visualisaties.html">
+                    Visualisaties
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/JorenMel/InfVis/blob/main/docs/Code/environmental-impact-of-food-production-eda.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/JorenMel/InfVis" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/JorenMel/InfVis/issues/new?title=Issue%20on%20page%20%2FCode/environmental-impact-of-food-production-eda.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Code/environmental-impact-of-food-production-eda.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Data Cleaning</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Cleaning</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-visualisation">Data Visualisation</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Table of Contents<span class="tocSkip"></span></h1>
+<div class="toc"><ul class="toc-item"></ul></div><p><strong>INTRODUCTION:</strong></p>
+<p>It is predicted that our global population will grow from 7.3 billion today to 9.7 billion by the year 2050. Finding solutions to feed the growing global population has become a pressing issue for agricultural and food organizations, entrepreneurs, and philanthropists.</p>
+<p>These solutions range from changing the way we cultivate and raise our food to changing the way we eat. To make things more challenging, the Earth’s climate is changing and is influenced by agriculture. As the world’s population has expanded and become wealthier, the demand for food, energy, and water has seen a rapid increase.</p>
+<p>Not only has demand increased for all three, but they are also heavily interconnected: food production requires water and energy; traditional energy production requires water resources; agriculture provides a potential source of energy and a significant amount of water.</p>
+<p><strong>OBJECTIVE:</strong></p>
+<p>Starting from the data related to the world production and distribution of food and feed, I am going to analyze the negative impact they have on the environment. I will perform an exploratory data analysis (EDA) with these datasets to identify the key factors that contribute to this impact.</p>
+<p><strong>DATASETS AVAILABLE:</strong></p>
+<p>This dataset on the Kaggle website (<a class="reference external" href="https://www.kaggle.com/datasets/dorbicycle/world-foodfeed-production">https://www.kaggle.com/datasets/dorbicycle/world-foodfeed-production</a>) ↗), gives an overview of our global food production, focusing on a comparison between food produced for human consumption and feed produced for animals.</p>
+<p>This dataset is made available by the United Nations Organization, which provides free access to data on food and agriculture for over 245 countries and territories (the csv file named ‘FAOSTAT_data_3-24-2022’ attached to the track), from the year 1961 to the most recent update.</p>
+<p>The third useful dataset useful dataset is available at this link (<a class="reference external" href="https://www.kaggle.com/selfvivek/environment-impact-of-food-production">https://www.kaggle.com/selfvivek/environment-impact-of-food-production</a>) ↗). It contains the 43 most commonly grown foods worldwide and 23 columns describing values such as water usage and greenhouse gas emissions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Import libraries</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.basemap</span> <span class="kn">import</span> <span class="n">Basemap</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+
+<span class="c1">#from sklearn.preprocessing import MinMaxScaler</span>
+<span class="c1">#from sklearn.preprocessing import MaxAbsScaler</span>
+<span class="c1">#from sklearn.preprocessing import StandardScaler</span>
+<span class="c1"># from sklearn.preprocessing import RobustScaler</span>
+<span class="c1"># from sklearn.preprocessing import OneHotEncoder</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Import .csv files</span>
+
+<span class="n">fao_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;FAO.csv&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;latin1&#39;</span><span class="p">)</span>
+<span class="c1">#faostat_raw = pd.read_csv(&#39;../input/faostat/FAOSTAT_data_3-24-2022.csv&#39;)</span>
+<span class="n">fp_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;Food_Production.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#Import .csv files</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">fao_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;FAO.csv&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;latin1&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1">#faostat_raw = pd.read_csv(&#39;../input/faostat/FAOSTAT_data_3-24-2022.csv&#39;)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">fp_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;Food_Production.csv&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/jupyterbook/lib/python3.10/site-packages/pandas/io/parsers/readers.py:1026,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1014</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1015</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1022</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1026</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/jupyterbook/lib/python3.10/site-packages/pandas/io/parsers/readers.py:620,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">617</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">619</span> <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">620</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">622</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">623</span>     <span class="k">return</span> <span class="n">parser</span>
+
+<span class="nn">File ~/miniconda3/envs/jupyterbook/lib/python3.10/site-packages/pandas/io/parsers/readers.py:1620,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1617</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1619</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1620</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/jupyterbook/lib/python3.10/site-packages/pandas/io/parsers/readers.py:1880,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1878</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1879</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1880</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1881</span>     <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1882</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1883</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1884</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1885</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1886</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1887</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1888</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1889</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1890</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1891</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
+
+<span class="nn">File ~/miniconda3/envs/jupyterbook/lib/python3.10/site-packages/pandas/io/common.py:873,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
+<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
+<span class="g g-Whitespace">    </span><span class="mi">871</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">872</span>         <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">873</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">874</span>             <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">875</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">876</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">877</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">878</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">879</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">880</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">881</span>         <span class="c1"># Binary mode</span>
+<span class="g g-Whitespace">    </span><span class="mi">882</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;FAO.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fao_raw</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#faostat_raw.info()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fp_raw</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fao_raw</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#faostat_raw.head()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fp_raw</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Heat map Correlation matrix</span>
+
+<span class="c1">#fig = px.imshow(fp_raw.corr(),x=list(fp_raw.corr().columns),y=list(fp_raw.corr().columns),width=1000, height=1000)</span>
+<span class="c1">#fig.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="data-cleaning">
+<h1>Data Cleaning<a class="headerlink" href="#data-cleaning" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#fao_raw data cleaning</span>
+
+<span class="n">fao_raw</span> <span class="o">=</span> <span class="n">fao_raw</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Area Abbreviation&#39;</span><span class="p">,</span><span class="s1">&#39;Area Code&#39;</span><span class="p">,</span><span class="s1">&#39;Item Code&#39;</span><span class="p">,</span><span class="s1">&#39;Element Code&#39;</span><span class="p">,</span><span class="s1">&#39;Unit&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#remove unused columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fao_raw</span> <span class="o">=</span> <span class="n">fao_raw</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">,</span><span class="s1">&#39;Item&#39;</span><span class="p">,</span><span class="s1">&#39;Element&#39;</span><span class="p">,</span><span class="s1">&#39;Y2013&#39;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">)</span> <span class="c1">#drop duplicate rows</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fao</span> <span class="o">=</span> <span class="n">fao_raw</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#replace NA with 0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fao</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="data-visualisation">
+<h1>Data Visualisation<a class="headerlink" href="#data-visualisation" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">oils</span> <span class="o">=</span> <span class="p">[</span><span class="n">oil</span> <span class="k">for</span> <span class="n">oil</span> <span class="ow">in</span> <span class="n">fp_raw</span><span class="p">[</span><span class="s1">&#39;Food product&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="s1">&#39;Oil&#39;</span> <span class="ow">in</span> <span class="n">oil</span><span class="p">]</span> <span class="c1">#list of oils</span>
+
+<span class="c1">#Greenhouse gas total emissions per food product barplot</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
+
+<span class="c1"># Sort the table</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">fp_raw</span><span class="p">[</span><span class="n">fp_raw</span><span class="p">[</span><span class="s1">&#39;Food product&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">oils</span><span class="p">)]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Total_emissions&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1">#Barplot</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Total_emissions&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Food product&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data1</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Total emissions [Kg CO2 - equivalents per kg product]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Food Product&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Greenhouse gas total emissions per food product&#39;</span><span class="p">)</span>
+
+<span class="c1"># show the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2</span> <span class="o">=</span> <span class="n">data1</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span>
+<span class="n">data2</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span><span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># set the y-axis tick labels</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">data2</span><span class="p">[</span><span class="s1">&#39;Food product&#39;</span><span class="p">])</span>
+
+<span class="c1"># set the title and labels for the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Emissions [Kg CO2 - equivalents per kg product]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Food Product&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;TOP 10 Food for Greenhouse gas emissions across stages of the food production lifecycle&#39;</span><span class="p">)</span>
+
+<span class="c1"># turn on the grid lines</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># show the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Greenhouse gas total emissions per food product barplot</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
+
+<span class="c1"># Sort the table</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">fp_raw</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Total_emissions&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1">#Barplot</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Total_emissions&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Food product&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data1</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Total emissions [Kg CO2 - equivalents per kg product]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Food Product&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Greenhouse gas total emissions per food product&#39;</span><span class="p">)</span>
+
+<span class="c1"># show the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The 10 foods with the greatest environmental impact in terms of total CO2 equivalent emissions are, in descending order, beef, lamb and mutton, cheese, dairy products from cow’s milk, dark chocolate, coffee, farmed shrimp, palm oil, pork and chicken. Considering the entire product life cycle, beef produces CO2 equivalent emissions +143% compared to lamb or mutton, +727% compared to pork and +877% compared to chicken.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#TOP10 Food for greenhouse gas emissions across stages of food production lifecyle barplot</span>
+
+<span class="c1"># Sort the table</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">fp_raw</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Total_emissions&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">data2</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span>
+<span class="n">data2</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span><span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># set the y-axis tick labels</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">data2</span><span class="p">[</span><span class="s1">&#39;Food product&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>
+
+<span class="c1"># set the title and labels for the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Emissions [Kg CO2 - equivalents per kg product]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Food Product&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;TOP 10 Food for Greenhouse gas emissions across stages of the food production lifecycle&#39;</span><span class="p">)</span>
+
+<span class="c1"># turn on the grid lines</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># show the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The most significant environmental impact in terms of CO2 equivalent in the life cycle of beef is due to methane emissions from cows, methane from rice, fertilizer emissions, manure and machinery. It is interesting to note that not for all foods the contribution linked to the farm is so significant. For example, in the case of chocolate production, the consumption of land in terms of deforestation and variations in the carbon level in the soil is more impactful.</p>
+<p><img alt="lifecycle.png" src="Code/attachment:d33ea482-9696-4374-8f79-8d2485c3020f.png" /></p>
+<p><strong>Source:</strong> <a class="reference external" href="https://www.visualcapitalist.com/visualising-the-greenhouse-gas-impact-of-each-food/">https://www.visualcapitalist.com/visualising-the-greenhouse-gas-impact-of-each-food/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Average Greenhouse gas emissions per food prodcution lifecycle stage</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="n">data3</span> <span class="o">=</span> <span class="n">data2</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">data2</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">#barplot</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data3</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Food production lifecycle stage&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Emissions [Kg CO2 - equivalents per kg product]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Average Greenhouse gas emissions per food production lifecycle stage&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As seen in the previous graph, the predominant contribution in the life cycle of food products is due to the impact of the farm. This is generally more evident in the case of animal products (meat, dairy products).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Food or Feed?</span>
+
+<span class="n">data4</span> <span class="o">=</span> <span class="n">fao</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Element&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">data4</span> <span class="o">=</span> <span class="n">data4</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">:</span><span class="mi">58</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Y2013&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="c1">#define Seaborn color palette to use</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;pastel&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="c1">#define labels</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Food&#39;</span><span class="p">,</span><span class="s1">&#39;Feed&#39;</span><span class="p">]</span>
+
+<span class="c1">#create pie chart</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">data4</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">colors</span> <span class="o">=</span> <span class="n">colors</span><span class="p">,</span> <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%.0f%%</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>From 1961 to 2013, 76% of the world’s food production was consumed by humans, while the remaining 24% was used for animal feed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Total food production 1961-2013 barplot</span>
+
+<span class="n">data5</span> <span class="o">=</span> <span class="n">fao</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Item&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+<span class="n">data5</span> <span class="o">=</span> <span class="n">data5</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">,</span><span class="s1">&#39;Area&#39;</span><span class="p">,</span><span class="s1">&#39;Element&#39;</span><span class="p">],</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">data5</span> <span class="o">=</span> <span class="n">data5</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data5</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;total&#39;</span><span class="p">])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">30</span><span class="p">))</span>
+
+<span class="c1">#barplot</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;total&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Item&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Food Production [1000 tons]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Food/Feed Item&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Total Food production 1961-2013&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The foods produced worldwide in the greatest quantities, from 1961 to 2013, are of plant origin (cereals, vegetables, tubers, milk, corn, wheat, rice, fruit, potatoes) except for milk which is of animal origin.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Food production per year - TOP 10 Countries plot</span>
+
+<span class="n">data6</span> <span class="o">=</span> <span class="n">fao</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Area&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">data6</span> <span class="o">=</span> <span class="n">data6</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">5</span><span class="p">:</span><span class="mi">58</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Y2013&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<span class="n">data6</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">data6</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="c1">#lineplot</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data6</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>
+
+<span class="c1"># set x-axis label rotation</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Food production [1000 tons]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Food production per year - TOP 10 Countries&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The graph shows the production of food from 1961 to 2013 for the 10 largest producing countries. China dominates production with over 3 billion tonnes in 2013, India is in second place with over 1 billion tonnes and the United States is in third place with less than 1 billion tonnes of food produced.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Food production world map in 1961</span>
+
+<span class="n">food_prod</span> <span class="o">=</span> <span class="n">fao</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Area&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1"># Create the choropleth map</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span><span class="n">food_prod</span><span class="p">,</span> 
+                    <span class="n">locations</span><span class="o">=</span><span class="n">food_prod</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> 
+                    <span class="n">locationmode</span><span class="o">=</span><span class="s1">&#39;country names&#39;</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Y1961&#39;</span><span class="p">,</span> 
+                    <span class="n">range_color</span><span class="o">=</span><span class="p">[</span><span class="n">food_prod</span><span class="p">[</span><span class="s1">&#39;Y1961&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">food_prod</span><span class="p">[</span><span class="s1">&#39;Y1961&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()],</span> 
+                    <span class="n">color_continuous_scale</span><span class="o">=</span><span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">sequential</span><span class="o">.</span><span class="n">Plasma</span><span class="p">,</span> 
+                    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;World Food Production in 1961 [1000 tons]&#39;</span><span class="p">)</span>
+
+<span class="c1"># Update the layout and configuration</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span>
+    <span class="n">title_x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">geo</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="n">showframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">showcoastlines</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">projection_type</span><span class="o">=</span><span class="s1">&#39;equirectangular&#39;</span><span class="p">),)</span>
+
+<span class="c1"># Show the figure</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Food production world map in 2013</span>
+
+<span class="n">food_prod</span> <span class="o">=</span> <span class="n">fao</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Area&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1"># Create the choropleth map</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span><span class="n">food_prod</span><span class="p">,</span> 
+                    <span class="n">locations</span><span class="o">=</span><span class="n">food_prod</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> 
+                    <span class="n">locationmode</span><span class="o">=</span><span class="s1">&#39;country names&#39;</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Y2013&#39;</span><span class="p">,</span> 
+                    <span class="n">range_color</span><span class="o">=</span><span class="p">[</span><span class="n">food_prod</span><span class="p">[</span><span class="s1">&#39;Y2013&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">food_prod</span><span class="p">[</span><span class="s1">&#39;Y2013&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()],</span> 
+                    <span class="n">color_continuous_scale</span><span class="o">=</span><span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">sequential</span><span class="o">.</span><span class="n">Plasma</span><span class="p">,</span> 
+                    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;World Food Production in 2013 [1000 tons]&#39;</span><span class="p">)</span>
+
+<span class="c1"># Update the layout and configuration</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span>
+    <span class="n">title_x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">geo</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="n">showframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">showcoastlines</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">projection_type</span><span class="o">=</span><span class="s1">&#39;equirectangular&#39;</span><span class="p">),)</span>
+
+<span class="c1"># Show the figure</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#High environmental impact food production per year - TOP 10 countries plot</span>
+
+<span class="n">data7</span> <span class="o">=</span> <span class="n">fao</span><span class="p">[(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Palm Oil&#39;</span><span class="p">)</span> <span class="o">|</span> 
+        <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Coffee and products&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Cocoa beans and products&#39;</span><span class="p">)</span>
+       <span class="o">|</span> <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Bovine Meat&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Mutton and Goat Meat&#39;</span><span class="p">)</span>
+       <span class="o">|</span> <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Poultry Meat&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Pigmeat&#39;</span><span class="p">)</span>
+       <span class="o">|</span> <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Milk - Excluding Butter&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Crustaceans&#39;</span><span class="p">)</span>
+       <span class="o">|</span> <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Butter, Ghee&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Area&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="n">data7</span> <span class="o">=</span> <span class="n">data7</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">5</span><span class="p">:</span><span class="mi">58</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Y2013&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<span class="n">data7</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">data7</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="c1">#lineplot</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data7</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>
+
+<span class="c1"># set x-axis label rotation</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Food production [1000 tons]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;High environmental impact food production per year - TOP 10 Countries&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The graph shows the production of the 10 foods with the highest environmental impact in terms of CO2 equivalent emissions per country. India, China and the United States are always the three largest producers, but unlike the previous graph (Food Production per Year - TOP 10 countries), India and the United States have a greater impact on the production of foods that are more harmful to the greenhouse effect.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Top 10 Highest Environmental impact Food lifecycle total Emissions per year plot</span>
+
+<span class="c1"># create a list of our conditions</span>
+<span class="n">conditions</span> <span class="o">=</span> <span class="p">[(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Bovine Meat&#39;</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Mutton &amp; Goat Meat&#39;</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Butter, Ghee&#39;</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Milk - Excluding Butter&#39;</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Cocoa Beans and products&#39;</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Coffee and products&#39;</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Crustaceans&#39;</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Palm Oil&#39;</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Pigmeat&#39;</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Poultry Meat&#39;</span><span class="p">)]</span>
+
+<span class="c1"># create a list of the values we want to assign for each condition</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mf">59.6</span><span class="p">,</span> <span class="mf">24.5</span><span class="p">,</span> <span class="mf">21.2</span><span class="p">,</span> <span class="mf">21.1</span><span class="p">,</span> <span class="mf">18.7</span><span class="p">,</span> <span class="mf">16.5</span><span class="p">,</span> <span class="mf">11.8</span><span class="p">,</span> <span class="mf">7.6</span><span class="p">,</span> <span class="mf">7.2</span><span class="p">,</span> <span class="mf">6.1</span><span class="p">]</span>
+
+<span class="c1"># create a new column and use np.select to assign values to it using our lists as arguments</span>
+<span class="n">fao</span><span class="p">[</span><span class="s1">&#39;emissions&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">conditions</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+
+<span class="n">data8</span> <span class="o">=</span> <span class="n">fao</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">10</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
+<span class="n">data8</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">data8</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">data8</span> <span class="o">=</span> <span class="n">data8</span><span class="o">.</span><span class="n">T</span>
+<span class="n">fao_emissions</span> <span class="o">=</span> <span class="n">data8</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;emissions&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+
+<span class="n">fao_emissions</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fao_emissions</span> <span class="o">=</span> <span class="n">fao_emissions</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Area&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">fao_emissions</span> <span class="o">=</span> <span class="n">fao_emissions</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;2013&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">fao_emissions</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>
+
+<span class="c1"># set x-axis label rotation</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Total Emissions per year [Kg CO2 eq * 10^6]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Top 10 Highest Environmental impact Food lifecycle total Emissions per year&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The graph above shows the total CO2 equivalent emissions per year and producing country. As in the previous graph (High environmental impact food production per year - TOP 10 Countries), India and the United States have a more marked dominance than China.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Highest Environmental Impact Food Production in 2013 barplot</span>
+
+<span class="n">data9</span> <span class="o">=</span> <span class="n">fao</span><span class="p">[((</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Palm Oil&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Coffee and products&#39;</span><span class="p">)</span> 
+                 <span class="o">|</span> <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Cocoa beans and products&#39;</span><span class="p">)</span>
+                 <span class="o">|</span> <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Bovine Meat&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Mutton and Goat Meat&#39;</span><span class="p">)</span>
+                 <span class="o">|</span> <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Poultry Meat&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Pigmeat&#39;</span><span class="p">)</span>
+                 <span class="o">|</span> <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Milk - Excluding Butter&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Crustaceans&#39;</span><span class="p">)</span>
+                 <span class="o">|</span> <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Butter, Ghee&#39;</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">((</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;India&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;China, mainland&#39;</span><span class="p">)</span> 
+                 <span class="o">|</span> <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;United States of America&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Brazil&#39;</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">fao</span><span class="p">[</span><span class="s1">&#39;Element&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Food&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Y2013&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">data9</span> <span class="o">=</span> <span class="n">data9</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">,</span><span class="s1">&#39;Element&#39;</span><span class="p">,</span><span class="s1">&#39;Y2013&#39;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data9</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Item&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Y2013&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Area&#39;</span><span class="p">)</span>
+
+<span class="c1"># set x-axis label rotation</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Food&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Food Production [1000 tons]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Highest Environmental impact Food Production in 2013&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The bar chart above shows the food production with the highest CO2 equivalent emissions for the four largest producing nations in the world. It is interesting to note that India is the largest producer of cow’s milk, but the meat production is very low compared to the United States, which is the largest producer of beef. China, on the other hand, is the largest producer of pork, which is less harmful to the environment than beef.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Code"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Cleaning</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-visualisation">Data Visualisation</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Group Palm Boys
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
