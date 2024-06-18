@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Jupyter Book Template # Change this to your book title.
+title: Palm Oil Book # Change this to your book title.
 author: Group Palm Boys # Change this to your name (or your team/organization name).
 
 # Force re-execution of notebooks on each build.
