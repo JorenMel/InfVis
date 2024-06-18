@@ -1,4 +1,4 @@
-Entity,Code,Year,Coconut,Groundnut,Palm oil,Sesame,Sunflower,Cottonseed,Olive,Rapeseed,Soybean
+Entity,Code,Year,Coconut oil yield per crop,Groundnut oil yield per crop,Palm oil yield per crop,Sesame oil yield per crop,Sunflower oil yield per crop,Cottonseed oil yield per crop,Olive oil yield per crop,Rapeseed oil yield per crop,Soybean oil yield per crop
 Afghanistan,AFG,1961,,,,0.067855425,0.3539458,0.06499181,0.13599999,,
 Afghanistan,AFG,1962,,,,0.056506023,0.37804216,0.0847372,0.1496,,
 Afghanistan,AFG,1963,,,,0.05514458,0.37804216,0.09671282,0.13599999,,
