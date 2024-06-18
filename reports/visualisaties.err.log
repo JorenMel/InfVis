@@ -1,0 +1,83 @@
+Traceback (most recent call last):
+  File "/home/joren-melissen/miniconda3/envs/jupyterbook/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/joren-melissen/miniconda3/envs/jupyterbook/lib/python3.10/site-packages/nbclient/client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/joren-melissen/miniconda3/envs/jupyterbook/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/home/joren-melissen/miniconda3/envs/jupyterbook/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/home/joren-melissen/miniconda3/envs/jupyterbook/lib/python3.10/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/home/joren-melissen/miniconda3/envs/jupyterbook/lib/python3.10/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/joren-melissen/miniconda3/envs/jupyterbook/lib/python3.10/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import pandas as pd
+import numpy as np
+import plotly as py
+import matplotlib.pyplot as plt
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mImportError[0m                               Traceback (most recent call last)
+File [0;32m~/miniconda3/envs/jupyterbook/lib/python3.10/site-packages/pandas/__init__.py:26[0m
+[1;32m     24[0m [38;5;28;01mtry[39;00m:
+[1;32m     25[0m     [38;5;66;03m# numpy compat[39;00m
+[0;32m---> 26[0m     [38;5;28;01mfrom[39;00m [38;5;21;01mpandas[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcompat[39;00m [38;5;28;01mimport[39;00m (
+[1;32m     27[0m         is_numpy_dev [38;5;28;01mas[39;00m _is_numpy_dev,  [38;5;66;03m# pyright: ignore[reportUnusedImport] # noqa: F401[39;00m
+[1;32m     28[0m     )
+[1;32m     29[0m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m [38;5;28;01mas[39;00m _err:  [38;5;66;03m# pragma: no cover[39;00m
+
+File [0;32m~/miniconda3/envs/jupyterbook/lib/python3.10/site-packages/pandas/compat/__init__.py:26[0m
+[1;32m     25[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcompat[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcompressors[39;00m
+[0;32m---> 26[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpandas[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcompat[39;00m[38;5;21;01m.[39;00m[38;5;21;01mnumpy[39;00m [38;5;28;01mimport[39;00m is_numpy_dev
+[1;32m     27[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpandas[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcompat[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyarrow[39;00m [38;5;28;01mimport[39;00m (
+[1;32m     28[0m     pa_version_under10p1,
+[1;32m     29[0m     pa_version_under11p0,
+[0;32m   (...)[0m
+[1;32m     33[0m     pa_version_under16p0,
+[1;32m     34[0m )
+
+File [0;32m~/miniconda3/envs/jupyterbook/lib/python3.10/site-packages/pandas/compat/numpy/__init__.py:21[0m
+[1;32m     20[0m [38;5;28;01mif[39;00m _nlv [38;5;241m<[39m Version(_min_numpy_ver):
+[0;32m---> 21[0m     [38;5;28;01mraise[39;00m [38;5;167;01mImportError[39;00m(
+[1;32m     22[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mthis version of pandas is incompatible with numpy < [39m[38;5;132;01m{[39;00m_min_numpy_ver[38;5;132;01m}[39;00m[38;5;130;01m\n[39;00m[38;5;124m"[39m
+[1;32m     23[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124myour numpy version is [39m[38;5;132;01m{[39;00m_np_version[38;5;132;01m}[39;00m[38;5;124m.[39m[38;5;130;01m\n[39;00m[38;5;124m"[39m
+[1;32m     24[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mPlease upgrade numpy to >= [39m[38;5;132;01m{[39;00m_min_numpy_ver[38;5;132;01m}[39;00m[38;5;124m to use this pandas version[39m[38;5;124m"[39m
+[1;32m     25[0m     )
+[1;32m     28[0m np_long: [38;5;28mtype[39m
+
+[0;31mImportError[0m: this version of pandas is incompatible with numpy < 1.22.4
+your numpy version is 1.22.3.
+Please upgrade numpy to >= 1.22.4 to use this pandas version
+
+The above exception was the direct cause of the following exception:
+
+[0;31mImportError[0m                               Traceback (most recent call last)
+Cell [0;32mIn[1], line 1[0m
+[0;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
+[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[1;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mplotly[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpy[39;00m
+
+File [0;32m~/miniconda3/envs/jupyterbook/lib/python3.10/site-packages/pandas/__init__.py:31[0m
+[1;32m     29[0m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m [38;5;28;01mas[39;00m _err:  [38;5;66;03m# pragma: no cover[39;00m
+[1;32m     30[0m     _module [38;5;241m=[39m _err[38;5;241m.[39mname
+[0;32m---> 31[0m     [38;5;28;01mraise[39;00m [38;5;167;01mImportError[39;00m(
+[1;32m     32[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mC extension: [39m[38;5;132;01m{[39;00m_module[38;5;132;01m}[39;00m[38;5;124m not built. If you want to import [39m[38;5;124m"[39m
+[1;32m     33[0m         [38;5;124m"[39m[38;5;124mpandas from the source directory, you may need to run [39m[38;5;124m"[39m
+[1;32m     34[0m         [38;5;124m"[39m[38;5;124m'[39m[38;5;124mpython setup.py build_ext[39m[38;5;124m'[39m[38;5;124m to build the C extensions first.[39m[38;5;124m"[39m
+[1;32m     35[0m     ) [38;5;28;01mfrom[39;00m [38;5;21;01m_err[39;00m
+[1;32m     37[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpandas[39;00m[38;5;21;01m.[39;00m[38;5;21;01m_config[39;00m [38;5;28;01mimport[39;00m (
+[1;32m     38[0m     get_option,
+[1;32m     39[0m     set_option,
+[0;32m   (...)[0m
+[1;32m     43[0m     options,
+[1;32m     44[0m )
+[1;32m     46[0m [38;5;66;03m# let init-time option registration happen[39;00m
+
+[0;31mImportError[0m: C extension: None not built. If you want to import pandas from the source directory, you may need to run 'python setup.py build_ext' to build the C extensions first.
+
