@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Example Notebook &#8212; Palm Oil Book</title>
+    <title>Palm Oil: Debunking Myths and Exploring Solutions &#8212; Palm Oil Book</title>
   
   
   
@@ -57,7 +57,7 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/notebook';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/v2';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -225,7 +225,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/JorenMel/InfVis/blob/main/docs/docs/notebook.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/JorenMel/InfVis/blob/main/docs/docs/v2.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -273,7 +273,7 @@
       
       
       
-      <li><a href="https://github.com/JorenMel/InfVis/issues/new?title=Issue%20on%20page%20%2Fdocs/notebook.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/JorenMel/InfVis/issues/new?title=Issue%20on%20page%20%2Fdocs/v2.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -303,7 +303,7 @@
       
       
       
-      <li><a href="../_sources/docs/notebook.ipynb" target="_blank"
+      <li><a href="../_sources/docs/v2.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -387,7 +387,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Example Notebook</h1>
+    <h1>Palm Oil: Debunking Myths and Exploring Solutions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -397,8 +397,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">Load data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-data">Plot data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perspective-1-we-pust-stop-the-production-of-palm-oil">Perspective 1: We pust stop the production of palm Oil</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#argument-1-it-leads-to-deforestation">Argument 1: It leads to deforestation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#argument-2-palm-oil-production-emits-more-co2-than-other-vegetable-oils">Argument 2: Palm oil production emits more CO2 than other vegetable oils.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perspective-2-the-problem-is-with-global-demand-for-vegetable-oil-not-palm-oil">Perspective 2: The problem is with global demand for vegetable oil, not palm oil</a></li>
 </ul>
             </nav>
         </div>
@@ -410,184 +415,55 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="example-notebook">
-<h1>Example Notebook<a class="headerlink" href="#example-notebook" title="Link to this heading">#</a></h1>
-<p>(Last updated: May 22, 2023)</p>
-<p>You can also create content with Jupyter Notebooks.
-This means that you can include code blocks and their outputs in your book.
-In this notebook, we show some examples of loading and plotting data.
-Check <a class="reference external" href="https://jupyterbook.org/en/stable/content/executable/index.html">this documentation</a> about how to write executable content.</p>
-<div class="cell docutils container">
+  <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import packages</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">plotly</span> <span class="k">as</span> <span class="nn">py</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<section id="load-data">
-<h2>Load data<a class="headerlink" href="#load-data" title="Link to this heading">#</a></h2>
-<p>You can put your data at the same directory as the notebook file and then use <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to load the data.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="palm-oil-debunking-myths-and-exploring-solutions">
+<h1>Palm Oil: Debunking Myths and Exploring Solutions<a class="headerlink" href="#palm-oil-debunking-myths-and-exploring-solutions" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>With the emergence of more and more palm oil-free products, it seems that palm oil is almost a thing of the past. Spurred on by horror stories of orangutans without trees and burning trees giving way to rows of oil palm trees, more and more people are opting for these products. This seems a very reasonable choice. However, it could be that the solution to this problem takes a more counter-intuitive approach: choose palm oil instead.</p>
+<p>Using various charts, we will try to present relevant data in as clear a way as possible, so that you can learn more about these two sides of the discussion and make your own choice on which option is best.</p>
+<p>In this analysis, we will concentrate exclusively on Malaysia and Indonesia, as these two countries are the predominant producers of palm oil globally. Together, they account for nearly 85% of the world’s palm oil supply, making them the most significant players in the industry.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the Iris flower dataset using pandas</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;iris_data.csv&quot;</span><span class="p">)</span>
-<span class="n">df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<span class="c1"># Load the dataset</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../Datasets/palm-oil-production.csv&#39;</span><span class="p">)</span>
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>sepal_length</th>
-      <th>sepal_width</th>
-      <th>petal_length</th>
-      <th>petal_width</th>
-      <th>species</th>
-      <th>species_id</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>5.1</td>
-      <td>3.5</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>setosa</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>4.9</td>
-      <td>3.0</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>setosa</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>4.7</td>
-      <td>3.2</td>
-      <td>1.3</td>
-      <td>0.2</td>
-      <td>setosa</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4.6</td>
-      <td>3.1</td>
-      <td>1.5</td>
-      <td>0.2</td>
-      <td>setosa</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5.0</td>
-      <td>3.6</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>setosa</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>145</th>
-      <td>6.7</td>
-      <td>3.0</td>
-      <td>5.2</td>
-      <td>2.3</td>
-      <td>virginica</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>146</th>
-      <td>6.3</td>
-      <td>2.5</td>
-      <td>5.0</td>
-      <td>1.9</td>
-      <td>virginica</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>147</th>
-      <td>6.5</td>
-      <td>3.0</td>
-      <td>5.2</td>
-      <td>2.0</td>
-      <td>virginica</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>148</th>
-      <td>6.2</td>
-      <td>3.4</td>
-      <td>5.4</td>
-      <td>2.3</td>
-      <td>virginica</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>149</th>
-      <td>5.9</td>
-      <td>3.0</td>
-      <td>5.1</td>
-      <td>1.8</td>
-      <td>virginica</td>
-      <td>3</td>
-    </tr>
-  </tbody>
-</table>
-<p>150 rows × 6 columns</p>
-</div></div></div>
-</div>
-</section>
-<section id="plot-data">
-<h2>Plot data<a class="headerlink" href="#plot-data" title="Link to this heading">#</a></h2>
-<p>We set the repository in a way that you can use <a class="reference external" href="https://plotly.com/python/">Plotly</a> for interactive visualizations.
-For more information, check <a class="reference external" href="https://jupyterbook.org/en/stable/interactive/interactive.html">this documentation</a>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the Iris dataset using Plotly</span>
-<span class="n">g1</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter_3d</span><span class="p">(</span><span class="n">df</span><span class="p">,</span>
-                   <span class="n">x</span><span class="o">=</span><span class="s2">&quot;sepal_width&quot;</span><span class="p">,</span>
-                   <span class="n">y</span><span class="o">=</span><span class="s2">&quot;sepal_length&quot;</span><span class="p">,</span>
-                   <span class="n">z</span><span class="o">=</span><span class="s2">&quot;petal_width&quot;</span><span class="p">,</span>
-                   <span class="n">color</span><span class="o">=</span><span class="s2">&quot;species&quot;</span><span class="p">,</span>
-                   <span class="n">size</span><span class="o">=</span><span class="s2">&quot;petal_length&quot;</span><span class="p">,</span>
-                   <span class="n">opacity</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
-                   <span class="n">size_max</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
-                   <span class="n">height</span><span class="o">=</span><span class="mi">700</span><span class="p">)</span>
-<span class="n">g1</span>
+<span class="c1"># Filter data for the year 2021</span>
+<span class="n">df_2021</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2021</span><span class="p">]</span>
+
+<span class="c1"># Sort by production to get the top 6 entries</span>
+<span class="n">df_2021_top6</span> <span class="o">=</span> <span class="n">df_2021</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Production&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="c1"># Define colors for the top 6 producers using provided palette</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">qualitative</span><span class="o">.</span><span class="n">T10</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">df_2021_top6</span><span class="p">)]</span>
+
+<span class="c1"># Plot a bar chart</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">df_2021_top6</span><span class="p">,</span> 
+             <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Entity&#39;</span><span class="p">,</span> 
+             <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Production&#39;</span><span class="p">,</span> 
+             <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Top 6 Palm Oil Producers in 2021&#39;</span><span class="p">,</span> 
+             <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Production&#39;</span><span class="p">:</span> <span class="s1">&#39;Production in tonnes&#39;</span><span class="p">,</span> <span class="s1">&#39;Entity&#39;</span><span class="p">:</span> <span class="s1">&#39;Country&#39;</span><span class="p">},</span>
+             <span class="n">template</span><span class="o">=</span><span class="s1">&#39;plotly_white&#39;</span><span class="p">,</span>
+             <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>  <span class="c1"># Assign colors to bars</span>
+
+<span class="c1"># Show the plot</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -612,9 +488,9 @@ For more information, check <a class="reference external" href="https://jupyterb
         });
         }
         </script>
-        </div><div class="output text_html"><div>                            <div id="16f33cdb-d11e-404a-8b03-09d58bbc2940" class="plotly-graph-div" style="height:700px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("16f33cdb-d11e-404a-8b03-09d58bbc2940")) {                    Plotly.newPlot(                        "16f33cdb-d11e-404a-8b03-09d58bbc2940",                        [{"hovertemplate":"species=setosa\u003cbr\u003esepal_width=%{x}\u003cbr\u003esepal_length=%{y}\u003cbr\u003epetal_width=%{z}\u003cbr\u003epetal_length=%{marker.size}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"setosa","marker":{"color":"#636efa","opacity":0.6,"size":[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5,1.5,1.6,1.4,1.1,1.2,1.5,1.3,1.4,1.7,1.5,1.7,1.5,1.0,1.7,1.9,1.6,1.6,1.5,1.4,1.6,1.6,1.5,1.5,1.4,1.5,1.2,1.3,1.5,1.3,1.5,1.3,1.3,1.3,1.6,1.9,1.4,1.6,1.4,1.5,1.4],"sizemode":"area","sizeref":0.007666666666666667,"symbol":"circle"},"mode":"markers","name":"setosa","scene":"scene","showlegend":true,"x":[3.5,3.0,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3.0,3.0,4.0,4.4,3.9,3.5,3.8,3.8,3.4,3.7,3.6,3.3,3.4,3.0,3.4,3.5,3.4,3.2,3.1,3.4,4.1,4.2,3.1,3.2,3.5,3.1,3.0,3.4,3.5,2.3,3.2,3.5,3.8,3.0,3.8,3.2,3.7,3.3],"y":[5.1,4.9,4.7,4.6,5.0,5.4,4.6,5.0,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1,5.4,5.1,4.6,5.1,4.8,5.0,5.0,5.2,5.2,4.7,4.8,5.4,5.2,5.5,4.9,5.0,5.5,4.9,4.4,5.1,5.0,4.5,4.4,5.0,5.1,4.8,5.1,4.6,5.3,5.0],"z":[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1,0.2,0.2,0.1,0.1,0.2,0.4,0.4,0.3,0.3,0.3,0.2,0.4,0.2,0.5,0.2,0.2,0.4,0.2,0.2,0.2,0.2,0.4,0.1,0.2,0.1,0.2,0.2,0.1,0.2,0.2,0.3,0.3,0.2,0.6,0.4,0.3,0.2,0.2,0.2,0.2],"type":"scatter3d"},{"hovertemplate":"species=versicolor\u003cbr\u003esepal_width=%{x}\u003cbr\u003esepal_length=%{y}\u003cbr\u003epetal_width=%{z}\u003cbr\u003epetal_length=%{marker.size}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"versicolor","marker":{"color":"#EF553B","opacity":0.6,"size":[4.7,4.5,4.9,4.0,4.6,4.5,4.7,3.3,4.6,3.9,3.5,4.2,4.0,4.7,3.6,4.4,4.5,4.1,4.5,3.9,4.8,4.0,4.9,4.7,4.3,4.4,4.8,5.0,4.5,3.5,3.8,3.7,3.9,5.1,4.5,4.5,4.7,4.4,4.1,4.0,4.4,4.6,4.0,3.3,4.2,4.2,4.2,4.3,3.0,4.1],"sizemode":"area","sizeref":0.007666666666666667,"symbol":"circle"},"mode":"markers","name":"versicolor","scene":"scene","showlegend":true,"x":[3.2,3.2,3.1,2.3,2.8,2.8,3.3,2.4,2.9,2.7,2.0,3.0,2.2,2.9,2.9,3.1,3.0,2.7,2.2,2.5,3.2,2.8,2.5,2.8,2.9,3.0,2.8,3.0,2.9,2.6,2.4,2.4,2.7,2.7,3.0,3.4,3.1,2.3,3.0,2.5,2.6,3.0,2.6,2.3,2.7,3.0,2.9,2.9,2.5,2.8],"y":[7.0,6.4,6.9,5.5,6.5,5.7,6.3,4.9,6.6,5.2,5.0,5.9,6.0,6.1,5.6,6.7,5.6,5.8,6.2,5.6,5.9,6.1,6.3,6.1,6.4,6.6,6.8,6.7,6.0,5.7,5.5,5.5,5.8,6.0,5.4,6.0,6.7,6.3,5.6,5.5,5.5,6.1,5.8,5.0,5.6,5.7,5.7,6.2,5.1,5.7],"z":[1.4,1.5,1.5,1.3,1.5,1.3,1.6,1.0,1.3,1.4,1.0,1.5,1.0,1.4,1.3,1.4,1.5,1.0,1.5,1.1,1.8,1.3,1.5,1.2,1.3,1.4,1.4,1.7,1.5,1.0,1.1,1.0,1.2,1.6,1.5,1.6,1.5,1.3,1.3,1.3,1.2,1.4,1.2,1.0,1.3,1.2,1.3,1.3,1.1,1.3],"type":"scatter3d"},{"hovertemplate":"species=virginica\u003cbr\u003esepal_width=%{x}\u003cbr\u003esepal_length=%{y}\u003cbr\u003epetal_width=%{z}\u003cbr\u003epetal_length=%{marker.size}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"virginica","marker":{"color":"#00cc96","opacity":0.6,"size":[6.0,5.1,5.9,5.6,5.8,6.6,4.5,6.3,5.8,6.1,5.1,5.3,5.5,5.0,5.1,5.3,5.5,6.7,6.9,5.0,5.7,4.9,6.7,4.9,5.7,6.0,4.8,4.9,5.6,5.8,6.1,6.4,5.6,5.1,5.6,6.1,5.6,5.5,4.8,5.4,5.6,5.1,5.1,5.9,5.7,5.2,5.0,5.2,5.4,5.1],"sizemode":"area","sizeref":0.007666666666666667,"symbol":"circle"},"mode":"markers","name":"virginica","scene":"scene","showlegend":true,"x":[3.3,2.7,3.0,2.9,3.0,3.0,2.5,2.9,2.5,3.6,3.2,2.7,3.0,2.5,2.8,3.2,3.0,3.8,2.6,2.2,3.2,2.8,2.8,2.7,3.3,3.2,2.8,3.0,2.8,3.0,2.8,3.8,2.8,2.8,2.6,3.0,3.4,3.1,3.0,3.1,3.1,3.1,2.7,3.2,3.3,3.0,2.5,3.0,3.4,3.0],"y":[6.3,5.8,7.1,6.3,6.5,7.6,4.9,7.3,6.7,7.2,6.5,6.4,6.8,5.7,5.8,6.4,6.5,7.7,7.7,6.0,6.9,5.6,7.7,6.3,6.7,7.2,6.2,6.1,6.4,7.2,7.4,7.9,6.4,6.3,6.1,7.7,6.3,6.4,6.0,6.9,6.7,6.9,5.8,6.8,6.7,6.7,6.3,6.5,6.2,5.9],"z":[2.5,1.9,2.1,1.8,2.2,2.1,1.7,1.8,1.8,2.5,2.0,1.9,2.1,2.0,2.4,2.3,1.8,2.2,2.3,1.5,2.3,2.0,2.0,1.8,2.1,1.8,1.8,1.8,2.1,1.6,1.9,2.0,2.2,1.5,1.4,2.3,2.4,1.8,1.8,2.1,2.4,2.3,1.9,2.3,2.5,2.3,1.9,2.0,2.3,1.8],"type":"scatter3d"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"scene":{"domain":{"x":[0.0,1.0],"y":[0.0,1.0]},"xaxis":{"title":{"text":"sepal_width"}},"yaxis":{"title":{"text":"sepal_length"}},"zaxis":{"title":{"text":"petal_width"}}},"legend":{"title":{"text":"species"},"tracegroupgap":0,"itemsizing":"constant"},"margin":{"t":60},"height":700},                        {"responsive": true}                    ).then(function(){
+        </div><div class="output text_html"><div>                            <div id="008ad254-cd4f-4862-9d28-38e67d71fb1a" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("008ad254-cd4f-4862-9d28-38e67d71fb1a")) {                    Plotly.newPlot(                        "008ad254-cd4f-4862-9d28-38e67d71fb1a",                        [{"alignmentgroup":"True","hovertemplate":"Country=%{x}\u003cbr\u003eProduction in tonnes=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":"#4C78A8","pattern":{"shape":""}},"name":"","offsetgroup":"","orientation":"v","showlegend":false,"textposition":"auto","x":["World","Indonesia","Malaysia","Thailand","Colombia","Nigeria"],"xaxis":"x","y":[80584560.0,49710344.0,18116354.0,2940000.0,1747773.0,1350000.0],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Country"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Production in tonnes"}},"legend":{"tracegroupgap":0},"title":{"text":"Top 6 Palm Oil Producers in 2021"},"barmode":"relative"},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('16f33cdb-d11e-404a-8b03-09d58bbc2940');
+var gd = document.getElementById('008ad254-cd4f-4862-9d28-38e67d71fb1a');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -638,23 +514,686 @@ if (outputEl) {{
 
                         })                };                });            </script>        </div></div></div>
 </div>
-<p>You can also plot the data using static visualizations, such as the <a class="reference external" href="https://seaborn.pydata.org/#">seaborn</a> library.</p>
+</section>
+<section id="perspective-1-we-pust-stop-the-production-of-palm-oil">
+<h2>Perspective 1: We pust stop the production of palm Oil<a class="headerlink" href="#perspective-1-we-pust-stop-the-production-of-palm-oil" title="Link to this heading">#</a></h2>
+<section id="argument-1-it-leads-to-deforestation">
+<h3>Argument 1: It leads to deforestation<a class="headerlink" href="#argument-1-it-leads-to-deforestation" title="Link to this heading">#</a></h3>
+<p>As we can see in the following graph, the production of palm oil in Indonesia and Malaysia, has been steadily increasing over the years. With the total production in 2023 being more than three times as much as in 2000.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the Iris dataset using seaborn</span>
-<span class="n">g2</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;species_id&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
-                  <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;species&#39;</span><span class="p">)</span>
-<span class="n">g2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="c1"># Load palm oil production data</span>
+<span class="n">palm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../Datasets/Oils/archive/cleaned/palm.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Filter data for Indonesia and Malaysia and years &gt;= 2000</span>
+<span class="n">df_Indo</span> <span class="o">=</span> <span class="n">palm</span><span class="p">[(</span><span class="n">palm</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Indonesia&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">palm</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">2000</span><span class="p">)]</span>
+<span class="n">df_Malaysia</span> <span class="o">=</span> <span class="n">palm</span><span class="p">[(</span><span class="n">palm</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Malaysia&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">palm</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">2000</span><span class="p">)]</span>
+
+<span class="c1"># Extract production values and years</span>
+<span class="n">xi</span> <span class="o">=</span> <span class="n">df_Indo</span><span class="p">[</span><span class="s1">&#39;Production&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">xm</span> <span class="o">=</span> <span class="n">df_Malaysia</span><span class="p">[</span><span class="s1">&#39;Production&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">years</span> <span class="o">=</span> <span class="n">df_Indo</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>  <span class="c1"># Both Indo and Malaysia have the same years</span>
+
+<span class="c1"># Calculate total production</span>
+<span class="n">total_production</span> <span class="o">=</span> <span class="n">xi</span> <span class="o">+</span> <span class="n">xm</span>
+
+<span class="c1"># Create traces for Plotly</span>
+<span class="n">trace_indo</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">years</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">xi</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Indonesia&#39;</span><span class="p">)</span>
+<span class="n">trace_malaysia</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">years</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">xm</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Malaysia&#39;</span><span class="p">)</span>
+<span class="n">trace_total</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">years</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">total_production</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Total Production&#39;</span><span class="p">)</span>
+
+<span class="c1"># Layout</span>
+<span class="n">layout</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Palm Oil Production in Indonesia and Malaysia (2000-2023)&#39;</span><span class="p">,</span>
+    <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">),</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Production&#39;</span><span class="p">),</span>
+    <span class="n">legend</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.1</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># Create figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">trace_indo</span><span class="p">,</span> <span class="n">trace_malaysia</span><span class="p">,</span> <span class="n">trace_total</span><span class="p">],</span> <span class="n">layout</span><span class="o">=</span><span class="n">layout</span><span class="p">)</span>
+
+<span class="c1"># Show plot</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7ecc448dca60&gt;
+<div class="output text_html"><div>                            <div id="71384589-6c85-46c1-97e4-ee149453a4f4" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("71384589-6c85-46c1-97e4-ee149453a4f4")) {                    Plotly.newPlot(                        "71384589-6c85-46c1-97e4-ee149453a4f4",                        [{"mode":"lines","name":"Indonesia","x":[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023],"y":[8300.0,9200.0,10300.0,11970.0,13560.0,15560.0,16600.0,18000.0,20500.0,22000.0,23600.0,26200.0,28500.0,30500.0,33000.0,32000.0,36000.0,39500.0,41500.0,42500.0,43500.0,42000.0,46500.0,47000.0],"type":"scatter"},{"mode":"lines","name":"Malaysia","x":[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023],"y":[11937.0,11858.0,13180.0,13420.0,15194.0,15485.0,15290.0,17567.0,17259.0,17763.0,18211.0,18202.0,19321.0,20161.0,19879.0,17700.0,18858.0,19683.0,20800.0,19255.0,17854.0,18152.0,18387.0,19000.0],"type":"scatter"},{"mode":"lines","name":"Total Production","x":[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023],"y":[20237.0,21058.0,23480.0,25390.0,28754.0,31045.0,31890.0,35567.0,37759.0,39763.0,41811.0,44402.0,47821.0,50661.0,52879.0,49700.0,54858.0,59183.0,62300.0,61755.0,61354.0,60152.0,64887.0,66000.0],"type":"scatter"}],                        {"legend":{"orientation":"h","x":0.1,"y":1.1},"title":{"text":"Palm Oil Production in Indonesia and Malaysia (2000-2023)"},"xaxis":{"title":{"text":"Year"}},"yaxis":{"title":{"text":"Production"}},"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('71384589-6c85-46c1-97e4-ee149453a4f4');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div></div></div>
+</div>
+<p>At the same time, we can see, as shown in the next graph, that the total tree loss has also been steadily increasing since 2001.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="c1"># Load the dataset</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../Datasets/Deforestation/Subnational 1 tree cover loss.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define the years to plot</span>
+<span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;tc_loss_ha_</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2001</span><span class="p">,</span> <span class="mi">2023</span><span class="p">)]</span>
+
+<span class="c1"># Mapping dictionary from Indonesian to English names for Kalimantan provinces</span>
+<span class="n">province_mapping</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Kalimantan Barat&#39;</span><span class="p">:</span> <span class="s1">&#39;West Kalimantan&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Kalimantan Tengah&#39;</span><span class="p">:</span> <span class="s1">&#39;Central Kalimantan&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Kalimantan Timur&#39;</span><span class="p">:</span> <span class="s1">&#39;East Kalimantan&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Kalimantan Selatan&#39;</span><span class="p">:</span> <span class="s1">&#39;South Kalimantan&#39;</span>
+<span class="p">}</span>
+
+<span class="c1"># Create an empty DataFrame to store totals</span>
+<span class="n">totals_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;cumulative_tc_loss_ha&#39;</span><span class="p">])</span>
+
+<span class="c1"># Loop through each province</span>
+<span class="k">for</span> <span class="n">province_indo</span><span class="p">,</span> <span class="n">province_eng</span> <span class="ow">in</span> <span class="n">province_mapping</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="c1"># Filter the DataFrame for the current province and threshold == 0</span>
+    <span class="n">province_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;subnational1&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">province_indo</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;threshold&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)]</span>
+    
+    <span class="c1"># Keep only relevant columns</span>
+    <span class="n">columns_to_keep</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;subnational1&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">years</span>
+    <span class="n">province_df</span> <span class="o">=</span> <span class="n">province_df</span><span class="p">[</span><span class="n">columns_to_keep</span><span class="p">]</span>
+    
+    <span class="c1"># Melt the DataFrame to long format</span>
+    <span class="n">province_df_long</span> <span class="o">=</span> <span class="n">province_df</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="s1">&#39;subnational1&#39;</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;tc_loss_ha&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Extract year from the column name and convert to integer</span>
+    <span class="n">province_df_long</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">province_df_long</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\d+)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    
+    <span class="c1"># Sort the DataFrame by year</span>
+    <span class="n">province_df_long</span> <span class="o">=</span> <span class="n">province_df_long</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Calculate cumulative tree loss</span>
+    <span class="n">province_df_long</span><span class="p">[</span><span class="s1">&#39;cumulative_tc_loss_ha&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">province_df_long</span><span class="p">[</span><span class="s1">&#39;tc_loss_ha&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+    
+    <span class="c1"># Append to totals_df</span>
+    <span class="n">totals_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">totals_df</span><span class="p">,</span> <span class="n">province_df_long</span><span class="p">[[</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;cumulative_tc_loss_ha&#39;</span><span class="p">]]],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Calculate the total cumulative tree loss across all provinces</span>
+<span class="n">totals_df</span> <span class="o">=</span> <span class="n">totals_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)[</span><span class="s1">&#39;cumulative_tc_loss_ha&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Initialize Figure using Plotly</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+
+<span class="c1"># Plot cumulative tree cover loss for Sarawak</span>
+<span class="n">sarawak_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;subnational1&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Sarawak&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;threshold&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)]</span>
+<span class="n">sarawak_df</span> <span class="o">=</span> <span class="n">sarawak_df</span><span class="p">[</span><span class="n">years</span><span class="p">]</span>
+<span class="n">sarawak_df_long</span> <span class="o">=</span> <span class="n">sarawak_df</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;tc_loss_ha&#39;</span><span class="p">)</span>
+<span class="n">sarawak_df_long</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sarawak_df_long</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\d+)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">sarawak_df_long</span> <span class="o">=</span> <span class="n">sarawak_df_long</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
+<span class="n">sarawak_df_long</span><span class="p">[</span><span class="s1">&#39;cumulative_tc_loss_ha&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sarawak_df_long</span><span class="p">[</span><span class="s1">&#39;tc_loss_ha&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">sarawak_df_long</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> 
+                         <span class="n">y</span><span class="o">=</span><span class="n">sarawak_df_long</span><span class="p">[</span><span class="s1">&#39;cumulative_tc_loss_ha&#39;</span><span class="p">],</span> 
+                         <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> 
+                         <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Sarawak&#39;</span><span class="p">))</span>
+
+<span class="c1"># Plot cumulative tree cover loss for Sabah</span>
+<span class="n">sabah_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;subnational1&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Sabah&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;threshold&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)]</span>
+<span class="n">sabah_df</span> <span class="o">=</span> <span class="n">sabah_df</span><span class="p">[</span><span class="n">years</span><span class="p">]</span>
+<span class="n">sabah_df_long</span> <span class="o">=</span> <span class="n">sabah_df</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;tc_loss_ha&#39;</span><span class="p">)</span>
+<span class="n">sabah_df_long</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sabah_df_long</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\d+)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">sabah_df_long</span> <span class="o">=</span> <span class="n">sabah_df_long</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
+<span class="n">sabah_df_long</span><span class="p">[</span><span class="s1">&#39;cumulative_tc_loss_ha&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sabah_df_long</span><span class="p">[</span><span class="s1">&#39;tc_loss_ha&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">sabah_df_long</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> 
+                         <span class="n">y</span><span class="o">=</span><span class="n">sabah_df_long</span><span class="p">[</span><span class="s1">&#39;cumulative_tc_loss_ha&#39;</span><span class="p">],</span> 
+                         <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> 
+                         <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Sabah&#39;</span><span class="p">))</span>
+
+<span class="c1"># Combine Sarawak and Sabah into &#39;East Malaysia&#39;</span>
+<span class="n">east_malaysia_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">east_malaysia_df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sarawak_df_long</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span>
+<span class="n">east_malaysia_df</span><span class="p">[</span><span class="s1">&#39;tc_loss_ha&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sarawak_df_long</span><span class="p">[</span><span class="s1">&#39;tc_loss_ha&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">sabah_df_long</span><span class="p">[</span><span class="s1">&#39;tc_loss_ha&#39;</span><span class="p">]</span>
+<span class="n">east_malaysia_df</span><span class="p">[</span><span class="s1">&#39;cumulative_tc_loss_ha&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sarawak_df_long</span><span class="p">[</span><span class="s1">&#39;cumulative_tc_loss_ha&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">sabah_df_long</span><span class="p">[</span><span class="s1">&#39;cumulative_tc_loss_ha&#39;</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">east_malaysia_df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> 
+                         <span class="n">y</span><span class="o">=</span><span class="n">east_malaysia_df</span><span class="p">[</span><span class="s1">&#39;cumulative_tc_loss_ha&#39;</span><span class="p">],</span> 
+                         <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> 
+                         <span class="n">name</span><span class="o">=</span><span class="s1">&#39;East Malaysia&#39;</span><span class="p">))</span>
+
+<span class="c1"># Plot cumulative tree cover loss for Kalimantan provinces</span>
+<span class="k">for</span> <span class="n">province_indo</span><span class="p">,</span> <span class="n">province_eng</span> <span class="ow">in</span> <span class="n">province_mapping</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="c1"># Filter the DataFrame for the current province and threshold == 0</span>
+    <span class="n">province_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;subnational1&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">province_indo</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;threshold&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)]</span>
+    
+    <span class="c1"># Keep only relevant columns</span>
+    <span class="n">province_df</span> <span class="o">=</span> <span class="n">province_df</span><span class="p">[</span><span class="n">years</span><span class="p">]</span>
+    
+    <span class="c1"># Melt the DataFrame to long format</span>
+    <span class="n">province_df_long</span> <span class="o">=</span> <span class="n">province_df</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;tc_loss_ha&#39;</span><span class="p">)</span>
+    <span class="n">province_df_long</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">province_df_long</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\d+)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">province_df_long</span> <span class="o">=</span> <span class="n">province_df_long</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Calculate cumulative tree loss</span>
+    <span class="n">province_df_long</span><span class="p">[</span><span class="s1">&#39;cumulative_tc_loss_ha&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">province_df_long</span><span class="p">[</span><span class="s1">&#39;tc_loss_ha&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+    
+    <span class="c1"># Add trace for the current province</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">province_df_long</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> 
+                             <span class="n">y</span><span class="o">=</span><span class="n">province_df_long</span><span class="p">[</span><span class="s1">&#39;cumulative_tc_loss_ha&#39;</span><span class="p">],</span> 
+                             <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> 
+                             <span class="n">name</span><span class="o">=</span><span class="n">province_eng</span><span class="p">))</span>
+
+<span class="c1"># Add trace for total cumulative tree cover loss in Kalimantan</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">totals_df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> 
+                         <span class="n">y</span><span class="o">=</span><span class="n">totals_df</span><span class="p">[</span><span class="s1">&#39;cumulative_tc_loss_ha&#39;</span><span class="p">],</span> 
+                         <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> 
+                         <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Total for Kalimantan&#39;</span><span class="p">))</span>
+
+<span class="c1"># Update layout</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Cumulative tree cover loss on Borneo per country and province (2001-2022)&#39;</span><span class="p">,</span>
+                  <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span>
+                  <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Cumulative Tree Cover Loss (ha)&#39;</span><span class="p">,</span>
+                  <span class="n">legend_title</span><span class="o">=</span><span class="s1">&#39;Province&#39;</span><span class="p">,</span>
+                  <span class="n">hovermode</span><span class="o">=</span><span class="s1">&#39;x unified&#39;</span><span class="p">,</span>
+                  <span class="n">template</span><span class="o">=</span><span class="s1">&#39;plotly_white&#39;</span><span class="p">)</span>
+
+<span class="c1"># Show the plot</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/4f7011804cd91399441df28dc740c9669fb9b47c5de1c520afabbc2a21428af5.png" src="../_images/4f7011804cd91399441df28dc740c9669fb9b47c5de1c520afabbc2a21428af5.png" />
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>                            <div id="7bcf8973-ecb3-499a-a612-7307e2276322" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("7bcf8973-ecb3-499a-a612-7307e2276322")) {                    Plotly.newPlot(                        "7bcf8973-ecb3-499a-a612-7307e2276322",                        [{"mode":"lines","name":"Sarawak","x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022],"y":[103529,178335,252827,362943,485681,600348,776456,940403,1247816,1384904,1576972,1848951,1982453,2220883,2384404,2574318,2751905,2914626,3043397,3126221,3208423,3295772],"type":"scatter"},{"mode":"lines","name":"Sabah","x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022],"y":[64055,124452,157777,245073,318272,399891,462556,547171,639540,743731,812493,918683,987437,1133894,1247842,1369003,1463592,1564770,1666502,1746346,1824212,1900753],"type":"scatter"},{"mode":"lines","name":"East Malaysia","x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022],"y":[167584,302787,410604,608016,803953,1000239,1239012,1487574,1887356,2128635,2389465,2767634,2969890,3354777,3632246,3943321,4215497,4479396,4709899,4872567,5032635,5196525],"type":"scatter"},{"mode":"lines","name":"West Kalimantan","x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022],"y":[78629,176274,232459,346908,451885,583497,716655,920906,1210741,1363893,1627996,1943892,2150143,2454859,2732644,3033510,3226361,3398032,3551257,3681276,3799636,3947949],"type":"scatter"},{"mode":"lines","name":"Central Kalimantan","x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022],"y":[64894,169183,298904,471544,631755,856324,1149028,1354902,1550141,1692855,1832983,2054981,2164620,2371973,2596453,3104713,3215398,3333244,3464714,3561717,3621232,3702000],"type":"scatter"},{"mode":"lines","name":"East Kalimantan","x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022],"y":[74179,156042,210115,319037,410705,564687,719527,865942,1130807,1268718,1493892,1813746,2001348,2286048,2531947,2913673,3093543,3290553,3462664,3587652,3686154,3771626],"type":"scatter"},{"mode":"lines","name":"South Kalimantan","x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022],"y":[19816,44687,63281,105915,131482,186002,215817,234673,295746,322280,371433,440943,482621,559267,640517,713442,756900,801721,854954,879798,910308,934752],"type":"scatter"},{"mode":"lines","name":"Total for Kalimantan","x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022],"y":[237518,546186,804759,1243404,1625827,2190510,2801027,3376423,4187435,4647746,5326304,6253562,6798732,7672147,8501561,9765338,10292202,10823550,11333589,11710443,12017330,12356327],"type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"title":{"text":"Cumulative tree cover loss on Borneo per country and province (2001-2022)"},"xaxis":{"title":{"text":"Year"}},"yaxis":{"title":{"text":"Cumulative Tree Cover Loss (ha)"}},"legend":{"title":{"text":"Province"}},"hovermode":"x unified"},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('7bcf8973-ecb3-499a-a612-7307e2276322');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div></div></div>
+</div>
+<p>There seems to be a strong negative correlation between the palm oil production and the total tree cover. This can be seen in the next graph, wich contains the data for Indonesia.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">interpolate</span>
+<span class="kn">from</span> <span class="nn">plotly.subplots</span> <span class="kn">import</span> <span class="n">make_subplots</span>
+
+<span class="c1"># Load palm oil production data</span>
+<span class="n">palm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../Datasets/Oils/archive/cleaned/palm.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Filter data for Indonesia and years &gt;= 2000</span>
+<span class="n">df_Indo</span> <span class="o">=</span> <span class="n">palm</span><span class="p">[(</span><span class="n">palm</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Indonesia&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">palm</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">2000</span><span class="p">)]</span>
+
+<span class="c1"># Extract production values and years</span>
+<span class="n">xi</span> <span class="o">=</span> <span class="n">df_Indo</span><span class="p">[</span><span class="s1">&#39;Production&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">years_palm</span> <span class="o">=</span> <span class="n">df_Indo</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># Load the dataset for Kalimantan forest cover</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../Datasets/Deforestation/Subnational 1 tree cover loss.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Filter for Kalimantan provinces and threshold == 0</span>
+<span class="n">provinces</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Kalimantan Barat&#39;</span><span class="p">,</span> <span class="s1">&#39;Kalimantan Tengah&#39;</span><span class="p">,</span> <span class="s1">&#39;Kalimantan Timur&#39;</span><span class="p">,</span> <span class="s1">&#39;Kalimantan Selatan&#39;</span><span class="p">]</span>
+<span class="n">kalimantan_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;subnational1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">provinces</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;threshold&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)]</span>
+
+<span class="c1"># Calculate initial tree cover in 2000</span>
+<span class="n">initial_extent_2000</span> <span class="o">=</span> <span class="n">kalimantan_df</span><span class="p">[</span><span class="s1">&#39;extent_2000_ha&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1"># Calculate tree cover gain spread over 22 years</span>
+<span class="n">gain_spread</span> <span class="o">=</span> <span class="p">(</span><span class="n">kalimantan_df</span><span class="p">[</span><span class="s1">&#39;gain_2000-2020_ha&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="mi">22</span><span class="p">)</span>
+
+<span class="c1"># Calculate cumulative tree cover losses from 2001 to 2022</span>
+<span class="n">years_tree_cover</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2001</span><span class="p">,</span> <span class="mi">2023</span><span class="p">)</span>
+<span class="n">cumulative_losses</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">years_tree_cover</span><span class="p">:</span>
+    <span class="n">loss_column</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;tc_loss_ha_</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="n">cumulative_loss</span> <span class="o">=</span> <span class="p">(</span><span class="n">kalimantan_df</span><span class="p">[</span><span class="n">loss_column</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">-</span> <span class="n">gain_spread</span><span class="p">)</span>
+    <span class="n">cumulative_losses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cumulative_loss</span><span class="p">)</span>
+
+<span class="c1"># Calculate total tree cover per year</span>
+<span class="n">annual_tree_cover</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">years_tree_cover</span><span class="p">):</span>
+    <span class="n">total_tree_cover</span> <span class="o">=</span> <span class="n">initial_extent_2000</span> <span class="o">-</span> <span class="nb">sum</span><span class="p">(</span><span class="n">cumulative_losses</span><span class="p">[:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">annual_tree_cover</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">total_tree_cover</span><span class="p">)</span>
+
+<span class="c1"># Interpolate palm oil production to match the years_tree_cover</span>
+<span class="n">interp_func</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">interp1d</span><span class="p">(</span><span class="n">years_palm</span><span class="p">,</span> <span class="n">xi</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="s1">&#39;extrapolate&#39;</span><span class="p">)</span>
+<span class="n">xi_interpolated</span> <span class="o">=</span> <span class="n">interp_func</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">years_tree_cover</span><span class="p">))</span>
+
+<span class="c1"># Create subplots with two y-axes</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">make_subplots</span><span class="p">(</span><span class="n">specs</span><span class="o">=</span><span class="p">[[{</span><span class="s2">&quot;secondary_y&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}]])</span>
+
+<span class="c1"># Add total tree cover trace</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">years_tree_cover</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="n">annual_tree_cover</span><span class="p">,</span>
+                    <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span>
+                    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Total Tree Cover (Kalimantan)&#39;</span><span class="p">,</span>
+                    <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)),</span>
+                    <span class="n">secondary_y</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Add palm oil production trace</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">years_tree_cover</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="n">xi_interpolated</span><span class="p">,</span>
+                    <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span>
+                    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Palm Oil Production (Indonesia)&#39;</span><span class="p">,</span>
+                    <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)),</span>
+                    <span class="n">secondary_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Update layout</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Palm Oil Production vs Total Tree Cover in Kalimantan (2000-2022)&#39;</span><span class="p">,</span>
+                  <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span>
+                  <span class="n">plot_bgcolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+
+<span class="c1"># Set y-axis titles</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="s2">&quot;Total Tree Cover (ha)&quot;</span><span class="p">,</span> <span class="n">secondary_y</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="s2">&quot;Palm Oil Production (tonnes)&quot;</span><span class="p">,</span> <span class="n">secondary_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Show figure</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">interpolate</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">plotly.subplots</span> <span class="kn">import</span> <span class="n">make_subplots</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># Load palm oil production data</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Load palm oil production data</span>
+<span class="n">palm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../Datasets/Oils/archive/cleaned/palm.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Filter data for Indonesia and years &gt;= 2000</span>
+<span class="n">df_Indo</span> <span class="o">=</span> <span class="n">palm</span><span class="p">[(</span><span class="n">palm</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Indonesia&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">palm</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">2000</span><span class="p">)]</span>
+
+<span class="c1"># Extract production values</span>
+<span class="n">xi</span> <span class="o">=</span> <span class="n">df_Indo</span><span class="p">[</span><span class="s1">&#39;Production&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># Load the dataset for Kalimantan forest cover</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../Datasets/Deforestation/Subnational 1 tree cover loss.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Filter for Kalimantan provinces and threshold == 0</span>
+<span class="n">provinces</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Kalimantan Barat&#39;</span><span class="p">,</span> <span class="s1">&#39;Kalimantan Tengah&#39;</span><span class="p">,</span> <span class="s1">&#39;Kalimantan Timur&#39;</span><span class="p">,</span> <span class="s1">&#39;Kalimantan Selatan&#39;</span><span class="p">]</span>
+<span class="n">kalimantan_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;subnational1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">provinces</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;threshold&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)]</span>
+
+<span class="c1"># Calculate initial tree cover in 2000</span>
+<span class="n">initial_extent_2000</span> <span class="o">=</span> <span class="n">kalimantan_df</span><span class="p">[</span><span class="s1">&#39;extent_2000_ha&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1"># Calculate tree cover gain spread over 22 years</span>
+<span class="n">gain_spread</span> <span class="o">=</span> <span class="p">(</span><span class="n">kalimantan_df</span><span class="p">[</span><span class="s1">&#39;gain_2000-2020_ha&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="mi">22</span><span class="p">)</span>
+
+<span class="c1"># Calculate cumulative tree cover losses from 2001 to 2022</span>
+<span class="n">years</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2001</span><span class="p">,</span> <span class="mi">2023</span><span class="p">)</span>
+<span class="n">cumulative_losses</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">years</span><span class="p">:</span>
+    <span class="n">loss_column</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;tc_loss_ha_</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="n">cumulative_loss</span> <span class="o">=</span> <span class="p">(</span><span class="n">kalimantan_df</span><span class="p">[</span><span class="n">loss_column</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">-</span> <span class="n">gain_spread</span><span class="p">)</span>
+    <span class="n">cumulative_losses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cumulative_loss</span><span class="p">)</span>
+
+<span class="c1"># Calculate total tree cover per year</span>
+<span class="n">annual_tree_cover</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">years</span><span class="p">):</span>
+    <span class="n">total_tree_cover</span> <span class="o">=</span> <span class="n">initial_extent_2000</span> <span class="o">-</span> <span class="nb">sum</span><span class="p">(</span><span class="n">cumulative_losses</span><span class="p">[:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">annual_tree_cover</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">total_tree_cover</span><span class="p">)</span>
+
+<span class="c1"># Calculate correlation between palm oil production and annual tree cover</span>
+<span class="n">correlation</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">annual_tree_cover</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pearson correlation between Palm Oil Production in Indonesia and Total Tree Cover in Kalimantan: </span><span class="si">{</span><span class="n">correlation</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pearson correlation between Palm Oil Production in Indonesia and Total Tree Cover in Kalimantan: -0.99
+</pre></div>
+</div>
+</div>
+</div>
+<p>From this data it is evident that the production of palm oil is a mayor factor in more than 10 million hectares of tree cover loss in the Kalimantan provinces of Indonesia alone.</p>
+</section>
+<section id="argument-2-palm-oil-production-emits-more-co2-than-other-vegetable-oils">
+<h3>Argument 2: Palm oil production emits more CO2 than other vegetable oils.<a class="headerlink" href="#argument-2-palm-oil-production-emits-more-co2-than-other-vegetable-oils" title="Link to this heading">#</a></h3>
+<p>From the graph below, it is clear that palm oil emits the most CO2 per kg of product of all different types of oil, up to more than double the amount.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="c1"># Read the dataset</span>
+<span class="n">fp_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../Datasets/Food_Production.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># List of oils</span>
+<span class="n">oils</span> <span class="o">=</span> <span class="p">[</span><span class="n">oil</span> <span class="k">for</span> <span class="n">oil</span> <span class="ow">in</span> <span class="n">fp_raw</span><span class="p">[</span><span class="s1">&#39;Food product&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="s1">&#39;Oil&#39;</span> <span class="ow">in</span> <span class="n">oil</span><span class="p">]</span>
+
+<span class="c1"># Sort the table</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">fp_raw</span><span class="p">[</span><span class="n">fp_raw</span><span class="p">[</span><span class="s1">&#39;Food product&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">oils</span><span class="p">)]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Total_emissions&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Define colors for the bars</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">qualitative</span><span class="o">.</span><span class="n">T10</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">data1</span><span class="p">)]</span>
+
+<span class="c1"># Create Plotly figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">data1</span><span class="p">[</span><span class="s1">&#39;Food product&#39;</span><span class="p">],</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">data1</span><span class="p">[</span><span class="s1">&#39;Total_emissions&#39;</span><span class="p">],</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">,</span>
+    <span class="n">marker_color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span>
+<span class="p">))</span>
+
+<span class="c1"># Update layout</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Greenhouse gas total emissions per food product&#39;</span><span class="p">,</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Total emissions [Kg CO2 - equivalents per kg product]&#39;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Food Product&#39;</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">automargin</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>  <span class="c1"># Ensure labels fit</span>
+    <span class="n">bargap</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>  <span class="c1"># Gap between bars</span>
+    <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>  <span class="c1"># Adjust margins for better appearance</span>
+<span class="p">)</span>
+
+<span class="c1"># Show plot</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>This is mainly due to the land use change as we can see in the graph below. This is mainly due to the peat soil being exposed after deforestation, allowing oxigen in, which leads to oxidation of the soil (<em>Manning, F. C. et al, 2019</em>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+
+<span class="c1"># Load your dataset</span>
+<span class="n">fp_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../Datasets/Food_Production.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Filter for oils</span>
+<span class="n">oils</span> <span class="o">=</span> <span class="n">fp_raw</span><span class="p">[</span><span class="n">fp_raw</span><span class="p">[</span><span class="s1">&#39;Food product&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;Oil&#39;</span><span class="p">)]</span>
+
+<span class="c1"># Specify the order of oils</span>
+<span class="n">oil_order</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Sunflower Oil&#39;</span><span class="p">,</span> <span class="s1">&#39;Rapeseed Oil&#39;</span><span class="p">,</span> <span class="s1">&#39;Olive Oil&#39;</span><span class="p">,</span> <span class="s1">&#39;Soybean Oil&#39;</span><span class="p">,</span> <span class="s1">&#39;Palm Oil&#39;</span><span class="p">]</span>
+
+<span class="c1"># Set the order in the DataFrame</span>
+<span class="n">oils</span><span class="p">[</span><span class="s1">&#39;Food product&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">oils</span><span class="p">[</span><span class="s1">&#39;Food product&#39;</span><span class="p">],</span> <span class="n">categories</span><span class="o">=</span><span class="n">oil_order</span><span class="p">,</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">oils</span> <span class="o">=</span> <span class="n">oils</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Food product&#39;</span><span class="p">)</span>
+
+<span class="c1"># Select relevant columns for plotting</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">oils</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span>  <span class="c1"># Assuming columns 1 to 5 are the stages of emissions</span>
+
+<span class="c1"># Define colors for each stage based on provided color palette</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">qualitative</span><span class="o">.</span><span class="n">T10</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">data2</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:])]</span>
+
+<span class="c1"># Create traces for each stage</span>
+<span class="n">traces</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">stage</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data2</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+    <span class="n">trace</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">data2</span><span class="p">[</span><span class="s1">&#39;Food product&#39;</span><span class="p">],</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">data2</span><span class="p">[</span><span class="n">stage</span><span class="p">],</span>
+        <span class="n">name</span><span class="o">=</span><span class="n">stage</span><span class="p">,</span>
+        <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">,</span>
+        <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="p">)</span>
+    <span class="n">traces</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">trace</span><span class="p">)</span>
+
+<span class="c1"># Layout settings</span>
+<span class="n">layout</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Greenhouse gas emissions across stages of oil production lifecycle&#39;</span><span class="p">,</span>
+    <span class="n">barmode</span><span class="o">=</span><span class="s1">&#39;stack&#39;</span><span class="p">,</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Oil Type&#39;</span><span class="p">),</span>
+    <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Emissions [Kg CO2 - equivalents per kg product]&#39;</span><span class="p">),</span>
+    <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">200</span><span class="p">),</span>  <span class="c1"># Adjust left margin to accommodate food product labels</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>  <span class="c1"># Adjust height as needed</span>
+    <span class="n">hovermode</span><span class="o">=</span><span class="s1">&#39;closest&#39;</span><span class="p">,</span>
+    <span class="n">showlegend</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+
+<span class="c1"># Create figure object</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">traces</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="n">layout</span><span class="p">)</span>
+
+<span class="c1"># Display the plot</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</section>
+</section>
+<section id="perspective-2-the-problem-is-with-global-demand-for-vegetable-oil-not-palm-oil">
+<h2>Perspective 2: The problem is with global demand for vegetable oil, not palm oil<a class="headerlink" href="#perspective-2-the-problem-is-with-global-demand-for-vegetable-oil-not-palm-oil" title="Link to this heading">#</a></h2>
+<p>The solution seems straightforward: stop using palm oil. However, the solution might be a little more counter-intuitive. In fact, palm oil has some environmental benefits, especially its high yield per hectare. Looking at the chart below, it’s clear that other oils require much more land to produce the same amount, with the next best already using 4 times as much area. So, replacing palm oil with other types could lead to more deforestation and all the problems that come with it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+
+<span class="c1"># Load the dataset</span>
+<span class="n">oils_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../Datasets/Oils/oil-yield-by-crop.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Filter for the entity &#39;World&#39;</span>
+<span class="n">world_df</span> <span class="o">=</span> <span class="n">oils_df</span><span class="p">[</span><span class="n">oils_df</span><span class="p">[</span><span class="s1">&#39;Entity&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;World&#39;</span><span class="p">]</span>
+
+<span class="c1"># Filter for the year 2021</span>
+<span class="n">df_2021</span> <span class="o">=</span> <span class="n">world_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">world_df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2021</span><span class="p">]</span>
+
+<span class="c1"># Drop unnecessary columns</span>
+<span class="n">df_2021_clean</span> <span class="o">=</span> <span class="n">df_2021</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Entity&#39;</span><span class="p">,</span> <span class="s1">&#39;Code&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">])</span>
+
+<span class="c1"># Calculate the mean for each type of oil yield for the year 2021, ignoring NaNs</span>
+<span class="n">mean_columns_2021</span> <span class="o">=</span> <span class="n">df_2021_clean</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="c1"># Sort the mean values in descending order</span>
+<span class="n">mean_columns_2021_sorted</span> <span class="o">=</span> <span class="n">mean_columns_2021</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Define colors from Plotly&#39;s T10 qualitative color palette</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">qualitative</span><span class="o">.</span><span class="n">T10</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">mean_columns_2021_sorted</span><span class="p">)]</span>
+
+<span class="c1"># Create a bar plot using Plotly</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">mean_columns_2021_sorted</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">mean_columns_2021_sorted</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">,</span>  <span class="c1"># horizontal bar chart</span>
+    <span class="n">marker_color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span>  <span class="c1"># assign colors to bars</span>
+<span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Global mean oil yield per hectare in 2021 per crop&#39;</span><span class="p">,</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Mean yield per hectare (tonnes)&#39;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Type of oil&#39;</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>
+    <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>  <span class="c1"># adjust margins for better appearance</span>
+<span class="p">)</span>
+
+<span class="c1"># Show the plot</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>In fact, as you can see in the following chart, almost 40 per cent of all vegetable oil in the world comes from the oil palm. Should this be replaced by any other oil, the total land area on which oil crops are grown would be at least doubled.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="c1"># Load the dataset</span>
+<span class="n">oils_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../Datasets/vegetable-oil-production.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Filter for the entity &#39;World&#39;</span>
+<span class="n">world_df</span> <span class="o">=</span> <span class="n">oils_df</span><span class="p">[</span><span class="n">oils_df</span><span class="p">[</span><span class="s1">&#39;Entity&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;World&#39;</span><span class="p">]</span>
+
+<span class="c1"># Filter for the year 2021</span>
+<span class="n">df_2021</span> <span class="o">=</span> <span class="n">world_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">world_df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2021</span><span class="p">]</span>
+
+<span class="c1"># Drop unnecessary columns</span>
+<span class="n">df_2021_clean</span> <span class="o">=</span> <span class="n">df_2021</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Entity&#39;</span><span class="p">,</span> <span class="s1">&#39;Code&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">])</span>
+
+<span class="c1"># Calculate the mean for each type of oil yield for the year 2021, ignoring NaNs</span>
+<span class="n">mean_columns_2021</span> <span class="o">=</span> <span class="n">df_2021_clean</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="c1"># Sort the mean values in descending order</span>
+<span class="n">mean_columns_2021_sorted</span> <span class="o">=</span> <span class="n">mean_columns_2021</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Combine the lowest 5 categories into &#39;Other&#39;</span>
+<span class="n">top_categories</span> <span class="o">=</span> <span class="n">mean_columns_2021_sorted</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">other_category</span> <span class="o">=</span> <span class="n">mean_columns_2021_sorted</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">mean_combined</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">top_categories</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;Other&#39;</span><span class="p">:</span> <span class="n">other_category</span><span class="p">})])</span>
+
+<span class="c1"># Prepare the data for the Plotly chart</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">mean_combined</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">values</span> <span class="o">=</span> <span class="n">mean_combined</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">qualitative</span><span class="o">.</span><span class="n">T10</span>
+
+<span class="c1"># Create the donut chart using Plotly</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">go</span><span class="o">.</span><span class="n">Pie</span><span class="p">(</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> 
+    <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">,</span> 
+    <span class="n">hole</span><span class="o">=</span><span class="mf">.7</span><span class="p">,</span>  <span class="c1"># Set the hole size for the donut chart</span>
+    <span class="n">textinfo</span><span class="o">=</span><span class="s1">&#39;label+percent&#39;</span><span class="p">,</span>
+    <span class="n">textposition</span><span class="o">=</span><span class="s1">&#39;outside&#39;</span><span class="p">,</span>
+    <span class="n">insidetextorientation</span><span class="o">=</span><span class="s1">&#39;radial&#39;</span><span class="p">,</span>
+    <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+    <span class="p">)])</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">title_text</span><span class="o">=</span><span class="s1">&#39;Total vegetable oil production in 2021&#39;</span><span class="p">,</span>
+    <span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">600</span> 
+<span class="p">)</span>
+
+<span class="c1"># Show the plot</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+
+<span class="c1"># Load the data from the provided CSV file</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;../Datasets/palm-oil-production.csv&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+<span class="c1"># Create a new column for the decade</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Decade&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">//</span> <span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span>
+
+<span class="c1"># Aggregate data to get the total production for each country per decade</span>
+<span class="n">total_production_by_decade</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Entity&#39;</span><span class="p">,</span> <span class="s1">&#39;Decade&#39;</span><span class="p">])[</span><span class="s1">&#39;Production&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Sort the data by Decade to ensure correct order in the animation</span>
+<span class="n">total_production_by_decade</span> <span class="o">=</span> <span class="n">total_production_by_decade</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Decade&#39;</span><span class="p">)</span>
+
+<span class="c1"># Custom color scale with values from 0 to 350 million</span>
+<span class="n">color_scale</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="s2">&quot;rgb(165,0,38)&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">1.0</span><span class="o">/</span><span class="mf">7.0</span><span class="p">,</span> <span class="s2">&quot;rgb(215,48,39)&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="mf">7.0</span><span class="p">,</span> <span class="s2">&quot;rgb(244,109,67)&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">3.0</span><span class="o">/</span><span class="mf">7.0</span><span class="p">,</span> <span class="s2">&quot;rgb(253,174,97)&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">4.0</span><span class="o">/</span><span class="mf">7.0</span><span class="p">,</span> <span class="s2">&quot;rgb(254,224,144)&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">5.0</span><span class="o">/</span><span class="mf">7.0</span><span class="p">,</span> <span class="s2">&quot;rgb(224,243,248)&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">6.0</span><span class="o">/</span><span class="mf">7.0</span><span class="p">,</span> <span class="s2">&quot;rgb(171,217,233)&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;rgb(49,54,149)&quot;</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="c1"># Create a choropleth map using Plotly with animation</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span>
+    <span class="n">total_production_by_decade</span><span class="p">,</span>
+    <span class="n">locations</span><span class="o">=</span><span class="s2">&quot;Entity&quot;</span><span class="p">,</span>
+    <span class="n">locationmode</span><span class="o">=</span><span class="s2">&quot;country names&quot;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;Production&quot;</span><span class="p">,</span>
+    <span class="n">hover_name</span><span class="o">=</span><span class="s2">&quot;Entity&quot;</span><span class="p">,</span>
+    <span class="n">animation_frame</span><span class="o">=</span><span class="s2">&quot;Decade&quot;</span><span class="p">,</span>
+    <span class="n">color_continuous_scale</span><span class="o">=</span><span class="n">color_scale</span><span class="p">,</span>
+    <span class="n">range_color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">350e6</span><span class="p">),</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Palm Oil Production by Country per Decade&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Update the layout to focus on Southeast Asia</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_geos</span><span class="p">(</span>
+    <span class="n">projection_scale</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>  <span class="c1"># This controls the zoom level</span>
+    <span class="n">center</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;lat&quot;</span><span class="p">:</span> <span class="mf">2.5</span><span class="p">,</span> <span class="s2">&quot;lon&quot;</span><span class="p">:</span> <span class="mi">115</span><span class="p">},</span>  <span class="c1"># Center the map roughly around Indonesia/Malaysia</span>
+    <span class="n">visible</span><span class="o">=</span><span class="kc">False</span>  <span class="c1"># Hide the frame</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">1200</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">800</span>
+<span class="p">)</span>
+
+<span class="c1"># Show the map</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>So what is the real solution? It seems there is a problem with the global demand for vegetable oil in general, not specifically palm oil. A solution could be to reduce the consumption af all oils.</p>
+<p>Citations:</p>
+<p><em>Manning, F. C., Kho, L. K., Hill, T. C., Cornulier, T., &amp; Teh, Y. A. (2019). Carbon emissions from oil palm plantations on peat soil. Frontiers in Forests and Global Change, 2, 37.</em></p>
+<p>Sources:</p>
+<p><a class="reference external" href="https://ourworldindata.org/grapher/oil-yield-by-crop?tab=table">https://ourworldindata.org/grapher/oil-yield-by-crop?tab=table</a></p>
+<p><a class="reference external" href="https://www.kaggle.com/datasets/karnikakapoor/global-forest-data-2001-2022">https://www.kaggle.com/datasets/karnikakapoor/global-forest-data-2001-2022</a></p>
+<p><a class="reference external" href="https://ourworldindata.org/palm-oil">https://ourworldindata.org/palm-oil</a></p>
+<p><a class="reference external" href="https://ourworldindata.org/grapher/vegetable-oil-production">https://ourworldindata.org/grapher/vegetable-oil-production</a></p>
 </section>
 </section>
 
@@ -704,8 +1243,13 @@ if (outputEl) {{
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">Load data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-data">Plot data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perspective-1-we-pust-stop-the-production-of-palm-oil">Perspective 1: We pust stop the production of palm Oil</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#argument-1-it-leads-to-deforestation">Argument 1: It leads to deforestation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#argument-2-palm-oil-production-emits-more-co2-than-other-vegetable-oils">Argument 2: Palm oil production emits more CO2 than other vegetable oils.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perspective-2-the-problem-is-with-global-demand-for-vegetable-oil-not-palm-oil">Perspective 2: The problem is with global demand for vegetable oil, not palm oil</a></li>
 </ul>
   </nav></div>
 

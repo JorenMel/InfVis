@@ -1,0 +1,106 @@
+Traceback (most recent call last):
+  File "/home/joren-melissen/miniconda3/envs/jupyterbook/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/joren-melissen/miniconda3/envs/jupyterbook/lib/python3.10/site-packages/nbclient/client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/joren-melissen/miniconda3/envs/jupyterbook/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/home/joren-melissen/miniconda3/envs/jupyterbook/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/home/joren-melissen/miniconda3/envs/jupyterbook/lib/python3.10/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/home/joren-melissen/miniconda3/envs/jupyterbook/lib/python3.10/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/joren-melissen/miniconda3/envs/jupyterbook/lib/python3.10/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import pandas as pd
+import plotly.graph_objects as go
+from scipy import interpolate
+from plotly.subplots import make_subplots
+
+# Load palm oil production data
+palm = pd.read_csv('../Datasets/Oils/archive/cleaned/palm.csv')
+
+# Filter data for Indonesia and years >= 2000
+df_Indo = palm[(palm['Country'] == 'Indonesia') & (palm['Year'] >= 2000)]
+
+# Extract production values and years
+xi = df_Indo['Production'].values
+years_palm = df_Indo['Year'].values
+
+# Load the dataset for Kalimantan forest cover
+df = pd.read_csv('../Datasets/Deforestation/Subnational 1 tree cover loss.csv')
+
+# Filter for Kalimantan provinces and threshold == 0
+provinces = ['Kalimantan Barat', 'Kalimantan Tengah', 'Kalimantan Timur', 'Kalimantan Selatan']
+kalimantan_df = df[(df['subnational1'].isin(provinces)) & (df['threshold'] == 0)]
+
+# Calculate initial tree cover in 2000
+initial_extent_2000 = kalimantan_df['extent_2000_ha'].sum()
+
+# Calculate tree cover gain spread over 22 years
+gain_spread = (kalimantan_df['gain_2000-2020_ha'].sum() / 22)
+
+# Calculate cumulative tree cover losses from 2001 to 2022
+years_tree_cover = range(2001, 2023)
+cumulative_losses = []
+for year in years_tree_cover:
+    loss_column = f'tc_loss_ha_{year}'
+    cumulative_loss = (kalimantan_df[loss_column].sum() - gain_spread)
+    cumulative_losses.append(cumulative_loss)
+
+# Calculate total tree cover per year
+annual_tree_cover = []
+for i, year in enumerate(years_tree_cover):
+    total_tree_cover = initial_extent_2000 - sum(cumulative_losses[:i + 1])
+    annual_tree_cover.append(total_tree_cover)
+
+# Interpolate palm oil production to match the years_tree_cover
+interp_func = interpolate.interp1d(years_palm, xi, kind='linear', fill_value='extrapolate')
+xi_interpolated = interp_func(list(years_tree_cover))
+
+# Create subplots with two y-axes
+fig = make_subplots(specs=[[{"secondary_y": True}]])
+
+# Add total tree cover trace
+fig.add_trace(go.Scatter(x=list(years_tree_cover), y=annual_tree_cover,
+                    mode='lines',
+                    name='Total Tree Cover (Kalimantan)',
+                    line=dict(color='blue')),
+                    secondary_y=False)
+
+# Add palm oil production trace
+fig.add_trace(go.Scatter(x=list(years_tree_cover), y=xi_interpolated,
+                    mode='lines',
+                    name='Palm Oil Production (Indonesia)',
+                    line=dict(color='green')),
+                    secondary_y=True)
+
+# Update layout
+fig.update_layout(title='Palm Oil Production vs Total Tree Cover in Kalimantan (2000-2022)',
+                  xaxis_title='Year',
+                  plot_bgcolor='white')
+
+# Set y-axis titles
+fig.update_yaxes(title_text="Total Tree Cover (ha)", secondary_y=False)
+fig.update_yaxes(title_text="Palm Oil Production (tonnes)", secondary_y=True)
+
+# Show figure
+fig.show()
+
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn[5], line 3[0m
+[1;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
+[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mplotly[39;00m[38;5;21;01m.[39;00m[38;5;21;01mgraph_objects[39;00m [38;5;28;01mas[39;00m [38;5;21;01mgo[39;00m
+[0;32m----> 3[0m [38;5;28;01mfrom[39;00m [38;5;21;01mscipy[39;00m [38;5;28;01mimport[39;00m interpolate
+[1;32m      4[0m [38;5;28;01mfrom[39;00m [38;5;21;01mplotly[39;00m[38;5;21;01m.[39;00m[38;5;21;01msubplots[39;00m [38;5;28;01mimport[39;00m make_subplots
+[1;32m      6[0m [38;5;66;03m# Load palm oil production data[39;00m
+
+[0;31mModuleNotFoundError[0m: No module named 'scipy'
+
